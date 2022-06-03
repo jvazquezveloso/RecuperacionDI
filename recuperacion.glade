@@ -5,40 +5,56 @@
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
     <child type="titlebar">
-      <placeholder/>
+      <object class="GtkLabel" id="lblInicio">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Inicio de sesión</property>
+      </object>
     </child>
     <child>
       <object class="GtkGrid" id="grid1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="row_spacing">31</property>
-        <property name="column_spacing">55</property>
+        <property name="row_spacing">32</property>
+        <property name="column_spacing">46</property>
+        <property name="column_homogeneous">True</property>
         <child>
-          <object class="GtkButton" id="btnLogin">
-            <property name="label" translatable="yes">Aceptar</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">3</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkComboBox" id="comboLogin">
+          <object class="GtkLabel" id="lblNome">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="label" translatable="yes"> Nome de usuario : </property>
           </object>
           <packing>
             <property name="left_attach">0</property>
-            <property name="top_attach">3</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entryNome">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">0</property>
           </packing>
         </child>
         <child>
           <object class="GtkEntry" id="entryContra">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnLogin">
+            <property name="label" translatable="yes">Aceptar</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
@@ -53,43 +69,18 @@
           </object>
           <packing>
             <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBox" id="comboLogin">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
             <property name="top_attach">2</property>
           </packing>
-        </child>
-        <child>
-          <object class="GtkEntry" id="entryNome">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-          </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="lblNome">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes"> Nome de usuario : </property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="lblInicio">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label" translatable="yes">Inicio de sesión</property>
-          </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">0</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder/>
         </child>
       </object>
     </child>
@@ -100,7 +91,10 @@
       <placeholder/>
     </child>
     <child>
-      <placeholder/>
+      <object class="GtkSeparator">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
     </child>
   </object>
 </interface>

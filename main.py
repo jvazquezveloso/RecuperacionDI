@@ -25,6 +25,9 @@ class Main(Gtk.Window):
 
         btnLogin = builder.get_object("btnLogin")
         comboLogin = builder.get_object("comboLogin")
+        comboLogin=Gtk.ComboBoxText()
+        comboLogin.append_text("Xestión de Clientes")
+        comboLogin.append_text("Xestión de Servizos")
 
         bd = conexionBase.ConexionBD("base.dat")
         bd.conectaBD()

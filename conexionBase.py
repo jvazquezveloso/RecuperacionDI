@@ -82,7 +82,7 @@ class conexionBase:
                     print("Creando consulta: É necesario realizar a creación do cursor previamente")
                 else:
                     self.cursor.execute(consultaSQL)
-
+                    self.conexion.commit()
                     for fila in self.cursor.fetchall():
                         listaConsulta.append (fila)
 

@@ -63,6 +63,12 @@ class Main(Gtk.Window):
         window3 = builder.get_object("window3")
         window3.set_title("Xestión de Servizos")
 
+        modelo = Gtk.ListStore(str,str,str,str,str,str)
+        filtro = modelo.filter_new()
+        filtro.set_visible_func(filtro)
+
+        treeview = Gtk.TreeView(model=filtro)
+
         bd = conexionBase("base.dat")
         bd.conectaBD()
         bd.creaCursor()

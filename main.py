@@ -33,6 +33,10 @@ class Main(Gtk.Window):
         Gtk.Window.__init__(self)
         self.set_border_width(10)
 
+        bd = conexionBase("base.dat")
+        bd.conectaBD()
+        bd.creaCursor()
+
         builder = Gtk.Builder()
         builder.add_from_file("recuperacion.glade")
 
@@ -41,6 +45,8 @@ class Main(Gtk.Window):
         window1 = builder.get_object("window1")
         window1.set_title("Proxecto Recuperación")
         grid1 = builder.get_object("grid1")
+        grid2 = builder.get_object("grid2")
+        grid3 = builder.get_object("grid3")
 
         lblInicio = builder.get_object("lblInicio")
         lblNome = builder.get_object("lbNome")
@@ -63,16 +69,22 @@ class Main(Gtk.Window):
         window3 = builder.get_object("window3")
         window3.set_title("Xestión de Servizos")
 
-        modelo = Gtk.ListStore(str,str,str,str,str,str)
-        filtro = modelo.filter_new()
-        filtro.set_visible_func(filtro)
+        modelo = Gtk.ListStore(str,str,str,int,str,str)
+        consulta = bd.consultaSenParametros("SELECT * from clientes;")
+        print(type(consulta[0]))
+        for c in consulta:
+            modelo.append(c)
 
-        treeview = Gtk.TreeView(model=filtro)
+        treeview = Gtk.TreeView(model=modelo)
 
-        bd = conexionBase("base.dat")
-        bd.conectaBD()
-        bd.creaCursor()
+        for i, titulo in enumerate(["Nome", "Apelido", "Cidade", "DNI", "Teléfono", "Fecha de Nacemento"]):
+            cell = Gtk.CellRendererText()
+            column = Gtk.TreeViewColumn(titulo, cell, text=1)
+            treeview.append_column(column)
 
+        grid2.attach(treeview, 0,1,3,1)
+
+        treeview.show()
         window1.show_all()
 
     def cambio(self,control):

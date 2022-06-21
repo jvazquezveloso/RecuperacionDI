@@ -3,10 +3,6 @@ from datetime import date
 
 from reportlab.lib.colors import red, maroon
 from reportlab.pdfgen import canvas
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Table, Spacer
-from reportlab.pdfgen import canvas
 import gi
 
 from conexionBase import conexionBase

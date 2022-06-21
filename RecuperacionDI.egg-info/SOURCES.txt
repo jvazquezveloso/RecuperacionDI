@@ -1,0 +1,8 @@
+setup.py
+/home/oracle/Descargas/RecuperacionDI/conexionBase.py
+/home/oracle/Descargas/RecuperacionDI/main.py
+/home/oracle/Descargas/RecuperacionDI/ola.py
+RecuperacionDI.egg-info/PKG-INFO
+RecuperacionDI.egg-info/SOURCES.txt
+RecuperacionDI.egg-info/dependency_links.txt
+RecuperacionDI.egg-info/top_level.txt
